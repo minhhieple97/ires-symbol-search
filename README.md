@@ -27,8 +27,8 @@ This is a simple browser game built with React, TypeScript, and Tailwind CSS. Th
 
 1.  Clone the repository:
     bash
-    git clone https://github.com/your-username/letter-symbol-finder-game.git
-    cd letter-symbol-finder-game
+    git clone git@github.com:minhhieple97/ires-symbol-search.git
+    cd ires-symbol-search
 
 2.  Install the dependencies:
 
@@ -48,10 +48,6 @@ The application will be available at `http://localhost:5173`.
 4. Upon finding all correct characters, a congratulatory message will be displayed.
 5. If you are on the easy level, you can choose the topic for the next level and proceed to the hard level.
 6. Use the reset button in the top-right corner to restart the game at any time.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgements
 
