@@ -14,7 +14,7 @@ export const Board: React.FC = () => {
     <div
       className={`grid  justify-items-center justify-around  ${
         level === GAME_LEVEL.HARD &&
-        'grid-cols-12 grid-rows-30 sm:grid-cols-30 sm:grid-rows-12 md:grid-cols-30 md:grid-rows-12'
+        'grid-cols-8 grid-rows-16 sm:grid-cols-16 sm:grid-rows-8 md:grid-cols-16 md:grid-rows-8'
       } ${level === GAME_LEVEL.EASY && 'grid-cols-8 grid-rows-4'} ${gap} `}
     >
       {board.map((value, index) => (

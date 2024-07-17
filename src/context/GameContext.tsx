@@ -27,7 +27,6 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const initGame = useCallback((level: GAME_LEVEL, topic: GAME_TOPIC) => {
     const board = generateBoard(level, topic);
-    console.log({ board });
     const targetChar = board[Math.floor(Math.random() * board.length)];
     setGameState({
       ...initGameState,

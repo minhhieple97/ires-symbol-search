@@ -1,7 +1,7 @@
 export const EASY_ROWS = 4;
 export const EASY_COLS = 8;
-export const HARD_ROWS = 12;
-export const HARD_COLS = 30;
+export const HARD_ROWS = 8;
+export const HARD_COLS = 16;
 export const LETTER_VALUE = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=[]{}|;:,.<>?';
 export const SYMBOL_VALUE = '!@#$%^&*()_+-=[]{}|;:,.<>?';
 export const ICON_NAMES: string[] = [

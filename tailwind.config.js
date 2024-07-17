@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       gridTemplateColumns: {
-        30: 'repeat(30, minmax(0, 1fr))',
+        16: 'repeat(16, minmax(0, 1fr))',
       },
       gridColumn: {
         'span-13': 'span 13 / span 13',
