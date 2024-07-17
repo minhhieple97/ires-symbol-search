@@ -4,20 +4,21 @@ import { GAME_LEVEL, GAME_TOPIC } from '../constants';
 import { generateBoard } from '../helpers';
 
 export const GameContext = createContext<GameContextType | undefined>(undefined);
-
+const initGameState: GameState = {
+  board: [],
+  targetChar: '',
+  selectedIndices: [],
+  correctIndices: [],
+  incorrectIndices: [],
+};
 export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [level, setLevel] = useState<GAME_LEVEL | null>(null);
   const [topic, setTopic] = useState<GAME_TOPIC | null>(null);
-  const [gameState, setGameState] = useState<GameState>({
-    board: [],
-    targetChar: '',
-    selectedIndices: [],
-    correctIndices: [],
-    incorrectIndices: [],
-  });
+  const [gameState, setGameState] = useState<GameState>(initGameState);
   const onRestart = () => {
     setLevel(null);
     setTopic(null);
+    setGameState(initGameState);
   };
 
   const allCorrectSelected =
@@ -27,13 +28,10 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const initGame = useCallback((level: GAME_LEVEL, topic: GAME_TOPIC) => {
     const board = generateBoard(level, topic);
     const targetChar = board[Math.floor(Math.random() * board.length)];
-
     setGameState({
+      ...initGameState,
       board,
       targetChar,
-      selectedIndices: [],
-      correctIndices: [],
-      incorrectIndices: [],
     });
   }, []);
 
