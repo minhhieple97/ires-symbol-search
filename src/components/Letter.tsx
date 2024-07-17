@@ -19,8 +19,8 @@ export const Letter: React.FC<LetterProps> = ({
 }) => {
   const { level, topic } = useGameContext();
   const getBaseClasses = () => {
-    return level === GAME_LEVEL.EASY
-      ? 'w-10 h-10 text-xs sm:text-sm md:text-base'
+    return level === GAME_LEVEL.EASY && topic === GAME_TOPIC.LETTER
+      ? 'w-8 h-8 text-xs sm:text-sm md:text-base'
       : 'w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-[10px] sm:text-sm md:text-base';
   };
   const getStateClasses = () => {
