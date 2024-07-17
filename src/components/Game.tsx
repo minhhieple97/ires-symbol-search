@@ -24,7 +24,8 @@ export const Game: React.FC = () => {
       {allCorrectSelected && (
         <div className="mt-8 text-center w-full">
           <h3 className="text-sm sm:text-base md:text-lg font-bold text-green-500">
-            Congratulations, You have found all the characters!
+            Congratulations, You have found all the{' '}
+            {topic == GAME_TOPIC.LETTER ? 'characters' : 'symbols'}!
           </h3>
           {level === GAME_LEVEL.EASY && (
             <div className="flex flex-col justify-center  mt-4 gap-2">
