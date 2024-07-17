@@ -1,8 +1,9 @@
-import { GAME_LEVEL } from '../constants';
+import { GAME_LEVEL, GAME_TOPIC } from '../constants';
 import { useGameContext } from '../context/useGameContext';
+import { Icon } from '../ui/Icon';
 
 interface LetterProps {
-  char: string;
+  value: string;
   isSelected: boolean;
   isCorrect: boolean;
   isIncorrect: boolean;
@@ -10,19 +11,17 @@ interface LetterProps {
 }
 
 export const Letter: React.FC<LetterProps> = ({
-  char,
+  value,
   isSelected,
   isCorrect,
   isIncorrect,
   handleClick,
 }) => {
-  const { level } = useGameContext();
-  const baseClasses = `${level === GAME_LEVEL.EASY ? 'w-8' : 'w-5'} ${
-    level === GAME_LEVEL.EASY ? 'h-8' : 'h-6'
-  } ${
+  const { level, topic } = useGameContext();
+  const baseClasses = `${
     level === GAME_LEVEL.EASY
-      ? 'text-xs sm:text-sm md:text-base'
-      : 'text-[10px] sm:text-sm md:text-base'
+      ? 'w-10 h-10 text-xs sm:text-sm md:text-base'
+      : 'w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-[10px] sm:text-sm md:text-base'
   }  flex items-center justify-center font-bold rounded-md cursor-pointer transition-all duration-200 transform hover:scale-110`;
   const stateClasses = isSelected
     ? isCorrect
@@ -34,7 +33,7 @@ export const Letter: React.FC<LetterProps> = ({
 
   return (
     <div className={`${baseClasses} ${stateClasses}`} onClick={handleClick}>
-      {char}
+      {topic === GAME_TOPIC.LETTER ? value : <Icon name={value}></Icon>}
     </div>
   );
 };

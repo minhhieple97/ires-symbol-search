@@ -2,7 +2,6 @@ import { FC } from 'react';
 import { Game } from './components/Game';
 import { WelcomeScreen } from './components/WelcomeScreen.tsx';
 import { useGameContext } from './context/useGameContext.ts';
-
 const App: FC = () => {
   const { level, topic } = useGameContext();
   return (

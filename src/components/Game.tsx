@@ -3,20 +3,22 @@ import { useGameContext } from '../context/useGameContext';
 import { GAME_LEVEL, GAME_TOPIC } from '../constants';
 import { ResetButton } from './ResetButton';
 import { useState } from 'react';
+import { Icon } from '../ui/Icon';
 
 export const Game: React.FC = () => {
   const {
     level,
+    topic,
     gameState: { targetChar },
     allCorrectSelected,
     nextLevel,
   } = useGameContext();
   const [topicForNextLevel, setTopicForNextLevel] = useState<GAME_TOPIC>(GAME_TOPIC.LETTER);
   return (
-    <div className="bg-white rounded-lg shadow-lg p-5 max-w-7xl min-w-[300px] sm:min-w-[400px] md:min-w-[500px]  flex flex-col items-center relative">
+    <div className="bg-white rounded-lg shadow-lg p-5 max-w-[90%] min-w-[300px] sm:min-w-[400px] md:min-w-[500px]  flex flex-col items-center relative">
       <ResetButton></ResetButton>
-      <h2 className="text-base sm:text-xl md:text-2xl font-bold mb-4 mt-6 text-center text-gray-800">
-        Find all "{targetChar}"
+      <h2 className="text-base sm:text-xl md:text-2xl font-bold mb-4 mt-6 text-center text-gray-800 flex justify-center gap-2 items-center">
+        Find all "{topic == GAME_TOPIC.LETTER ? targetChar : <Icon name={targetChar}></Icon>}"
       </h2>
       <Board />
       {allCorrectSelected && (
