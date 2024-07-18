@@ -2,6 +2,10 @@
 
 This is a simple browser game built with React, TypeScript, and Tailwind CSS. The game involves finding all occurrences of a specified letter or symbol from a grid of random characters. The game has two levels: easy and hard. When the user completes the easy level, they can choose the topic (letter or symbol) for the next level.
 
+## Live Demo
+
+You can see the live demo link here: `https://ires-symbol-search.vercel.app`
+
 ## Features
 
 - Single-player game
