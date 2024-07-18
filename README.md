@@ -30,8 +30,9 @@ You can see the live demo link here: `https://ires-symbol-search.vercel.app`
 ### Installation
 
 1.  Clone the repository:
-    bash
+
     git clone git@github.com:minhhieple97/ires-symbol-search.git
+
     cd ires-symbol-search
 
 2.  Install the dependencies:
